@@ -2,7 +2,7 @@ const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env")});
 
 const mysql2 = require("mysql2");
-const { Module } = require("module");
+// const { Module } = require("module");
 
 const connection = mysql2.createConnection({
     host: "localhost",
@@ -11,6 +11,7 @@ const connection = mysql2.createConnection({
     port: 3005,
 
     // this is for the username
+    
     user:process.env.DB_USERNAME,
 
     // make sure you put your own updated mysql password

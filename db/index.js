@@ -35,7 +35,26 @@ module.export = {
         });
     },
 
-
+    updateEmployeesRoles: () => {
+        console.log("update Employees Roles...\n");
+        connection.query("SELECT * FROM employees", (err, res) => {
+            if (err) throw err;
+            // log all results of the SELECT statement
+            console.log(res);
+            connection.end();
+            return res;
+        });
+    },
+    updateEmployeeManager: () => {
+        console.log("update Employees Manager...\n");
+        connection.query("SELECT * FROM employees", (err, res) => {
+            if (err) throw err;
+            // log all results of the SELECT statement
+            console.log(res);
+            connection.end();
+            return res;
+        });
+    },
 
 
 };

@@ -8,14 +8,15 @@ const {
     viewDepartments,
     viewRoles,
     viewEmployees,
-    updateEmployeeRoles,
+    updateEmployeesRoles,
+    updateEmployeeManager,
 } = require("./questions.js");
 
 const firstQuestionFunction = () => {
     inquirer.prompt(firstQuestion).then ((answer) => {
      if(answer.role === "Add Departments") {
         //  fire the ask manager question
-        addDepartmentFunc();
+        addDepartmentsFunction();
      }else if (answer.role === "Add Roles") {
         //  fire the ask engineer question
         addRolesFunction()
@@ -31,7 +32,14 @@ const firstQuestionFunction = () => {
      }else if (answer.role === "ViewEmployees") {
         //  fire the ask intern question
         viewEmployeesFunction();
-     }
+     }else if (answer.role === "Update Employees Role") {
+        //  fire the ask inter questions
+        updateEmployeesRoleFunction();
+        }   else if (answer.role === "Update Employees Manager") {
+            //  fire the ask inter questions
+            updateEmployeeManagerFunction();
+         }    
+       
     });
 };
 
@@ -83,3 +91,10 @@ function updateEmployeeRoleFunction() {
 
     })
 }
+
+// function updateEmployeeMangerFunction() {
+//     inquirer.prompt(updateEmployeeManager).then((answer) => {
+//         console.log(answers);
+
+//     })
+// }
